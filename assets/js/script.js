@@ -17,7 +17,7 @@ $(".time-block").on("click", "p", function() {
     textInput.trigger("focus");
 });
   
-$(".time-block").on("click", ".save-btn", function() {
+$(".time-block").on("click", ".saveBtn", function() {
     var text = $(this).siblings("textarea")
       .val()
       .trim();
@@ -34,10 +34,11 @@ $(".time-block").on("click", ".save-btn", function() {
   
   
   $(this).siblings("textarea").replaceWith(eventComment);
-  });
+  checkEvents();
+});
 
 
-  var loadTimeSlots = function() {
+var loadTimeSlots = function() {
     timeSlots = JSON.parse(localStorage.getItem("timeSlots"));
 
     if(!timeSlots){
@@ -50,4 +51,33 @@ $(".time-block").on("click", ".save-btn", function() {
         console.log(list);
           createEvent(timeslot.time,timeslot.text);
         });
-      };
+};
+
+var setDate = function(){
+  var date = moment().format("dddd, MMMM Do YYYY, h:mm a")
+  return date;
+}
+
+var checkEvents = function(){
+  var hour = Number(moment().format("H"));
+  $('.time-block').each(function(){
+    var blockNum= Number($(this).attr('id').replace("time",""));
+    if(hour>blockNum){
+      $(this).children("#event-comment").addClass("past")
+    }
+    else if(hour===blockNum){
+      $(this).children("#event-comment").addClass("present")
+    }
+    else if(hour<blockNum){
+      $(this).children("#event-comment").addClass("future")
+    };
+    
+  })
+}
+
+checkEvents();
+setInterval(function(){
+  var date = setDate();
+  checkEvents();
+  $("#currentDay").text(date);
+}, 60000)
