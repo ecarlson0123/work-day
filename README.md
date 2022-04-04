@@ -42,5 +42,5 @@ Here you can see comments added to the schedule along with the working color cod
 
 Repository can be accessed here: [Work Day Schedule Repository](https://github.com/ecarlson0123/work-day)  
   
-Deployed website can be accessed here: [Work day Schedule Website](https://ecarlson0123.github.io/work-day/)  
+Deployed website can be accessed here: [Work Day Schedule Website](https://ecarlson0123.github.io/work-day/)  
 
