@@ -22,8 +22,9 @@ $(".time-block").on("click", "p", function() {
       .text()
       .trim();
     var textInput = $("<textarea>")
-      .addClass("form-control col-10")
+      .addClass("form-control col-10 col-md-9 h-100")
       .val(text)
+      .attr('id','textbox')
       .css('background-color', color);
     $(this).replaceWith(textInput);
     textInput.trigger("focus");
@@ -41,7 +42,7 @@ $(".time-block").on("click", ".saveBtn", function() {
     timeSlots[time]= text;
   
   var eventComment = $("<p>")
-    .addClass("col-10 align-middle")
+    .addClass("col-10 col-md-9 description h-100")
     .attr('id',"event-comment")
     .text(text);
   
