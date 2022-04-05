@@ -30,8 +30,8 @@ This function steps through each time-block and checks the time block id (which 
 These two functions create and store the data for the events saved.
 
 ### Event Listeners on the Time-blocks
-The events we listen for are a click on the "<p>" and save button.
-If you click the "<p>" element, a textarea input is dynamically generated and filled with the current text value of the "<p>" element. Then once the save(lock) button is clicked, the element is the switched back to a "<p>" element with whatever was typed in the textarea as the text value, then the event is saved locally and in a variable. 
+The events we listen for are a click on the "p" and save button.
+If you click the "p" element, a textarea input is dynamically generated and filled with the current text value of the "p" element. Then once the save(lock) button is clicked, the element is the switched back to a "p" element with whatever was typed in the textarea as the text value, then the event is saved locally and in a variable. 
 
 ### Time interval
 This time interval rewrites the time at the top of the page each minute and then checks to see if the event colors need to be updated, using checkEvents().
